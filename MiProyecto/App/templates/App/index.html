@@ -1,0 +1,295 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    home page
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class = "container">
+    
+        <!-- baner principal -->
+        <div class="banner">
+            <h1> ¡¡¡ Bienvenido a Heladeria Piculichi !!!</h1>
+            <img src="{% static 'logo.jpg'%}" alt="Imagen" class="logo">
+            <p>Ecuentra el mejor helado artesanal de zona Oeste</P>
+        </div>
+        <br> <br>  
+
+    <!--carousel Testimonios -->
+    
+    <div id="testimoniosCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="testimonio">
+                    <p>"Muy Ricos Los Helados"</p>
+                    <p><strong>- Bryan Rojas</strong></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonio">
+                    <p>"Los Mejores Gustos"</p>
+                    <p><strong>- Guido Rios</strong></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonio">
+                    <p>"Los Precios muy Accesibles"</p>
+                    <p><strong>- Nehuen Minvielle </strong></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonio">
+                    <p>"Totalmente Recomendado"</p>
+                    <p><strong>- Esteban Kiriska </strong></p>
+                </div>
+            </div> 
+        </div>
+        <a class="carousel-control-prev" href="#testimoniosCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#testimoniosCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+    <br> <br>
+
+                <!-- carousel de ofertas -->
+    <div class =  "cta mt-5 text-center">
+        <h2>¡No te pierdas nuestras ofertas exclusivas!</h2>
+    </div>
+    <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="oferta">
+                    <p>¡15% de descuento en sabores clasicos!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="oferta">
+                    <p>¡10% de descuento en cucuruchos los dias Lunes!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="oferta">
+                    <p>Envio gratutito en pedidos superiores a $10.000.<p>
+                </div>
+            </div>            
+        </div>
+        <a class="carousel-control-prev" href="ofertasCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev.icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span> 
+        </a>
+        <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hiden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>                               
+    </div>
+    <br> <br>
+
+    <!-- forma de pago -->
+    <div class="forma-de-pago mt-5">
+        <h2 class="text-center mb-4">Formas de Pago</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body paso bg-primary text-white rounded">
+                        <h3 class="card-title">1. Pago en Efectivo</h3>
+                        <p class="card-text">Pagando en efectivo tendrás un 15% de descuento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body paso bg-warning text-white rounded">
+                        <h3 class="card-title">2. Pago con Tarjeta de Crédito</h3>
+                        <p class="card-text">Pagando con crédito tendrás un recargo del 10%.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body paso bg-success text-white rounded">
+                        <h3 class="card-title">3. Pago con Debito</h3>
+                        <p class="card-text">Pagando con debito paga el precio actual sin recarga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preguntas Frecuentes -->
+    <div class="faq mt-5">
+        <h2>Preguntas Frecuentes</h2>
+        <div id="accordion">
+            <div class="card paso">
+                <div class="card-header" id="headingFour">
+                    <div class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            ¿Qué tipos de helados ofrecen?
+                        </button>
+                    </div>
+                </div>
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Ofrecemos una variedad de sabores artesanales.</p>
+                        <p>incluyendo opciones clásicas, frutales y de temporada.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card paso"> 
+                <div class="card-header" id="headingFive">
+                    <div class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            ¿Puedo personalizar un pedido?
+                        </button>
+                    </div>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Claro, podemos personalizar pedidos para celebraciones, como cumpleaños o bodas.</p>
+                        <p>Por favor, comuníquese con nosotros para hablar de los detalles.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card paso">
+                <div class="card-header" id="headingOne">
+                    <div class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Cuál es el helado más popular de su menú?
+                        </button>
+                    </div>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        Sin duda alguna, nuestro mejor sabor es la Menta Granizada.
+                    </div>
+                </div>
+            </div>
+            <div class="card paso"> 
+                <div class="card-header" id="headingTwo">
+                    <div class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Hacen pedidos a domicilio?
+                        </button>
+                    </div>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Sí, realizamos envíos a domicilio.
+                    </div>
+                </div>
+            </div>
+            <div class="card paso"> 
+                <div class="card-header" id="headingThree">
+                    <div class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Aceptan tarjetas de crédito o débito?
+                        </button>
+                    </div>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Si, Aceptamos y tambien transferencia, mire las tarjestas para saber sobre descuentos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="contacto mt-5">
+        <h2>Encuentranos</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d820.5046767202845!2d-58.623262792825685!3d-34.65423049439459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc77b5bc709f3%3A0x6d0b25505378c20b!2sCentro%20de%20formaci%C3%B3n%20laboral%20406!5e0!3m2!1ses-419!2sar!4v1726509119577!5m2!1ses-419!2sar" 
+                width="600" height="450" 
+                style="border:0;" allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensajes -->
+    <div class="contacto mt-5">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Dejanos tu opinion</h3>
+    
+                <form action="{% url 'contacto'%}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<br> <br> <br>
+
+    <!-- pie de pagina -->
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Helaria Piculichi</h5>
+                    <p>Contacto para reserva</p>
+                    <p><span class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></span> Teléfono: (11) 1543-1552</p>
+                    <p><span class="icon icon-ubicacion"><i class="fas fa-map-marker-alt"></i></span> Dirección: santa Rosa 1424</p>
+                    <p><span class="icon icon-email"><i class="fas fa-envelope"></i></span> Email: HeladeriaPiculichi@gmail.com</p>
+                    <p>Horarios: Martes a Domingo 12:00 HS - 22:00 HS</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <div class="footer-links">
+                        <a href="Politica Privacidad" class="footer-link">Política de privacidad</a>
+                        <a href="Terminos Condiciones" class="footer-link">Términos y condiciones</a>
+                    </div>
+                    <p>&copy; <span id="currentYear"></span> Heladeria Piculichi. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="social-icons">
+                        <li><a href="#" class="icon icon-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="icon icon-instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!-- jquery y bootstrap js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+$('.carousel').carousel({
+    interval: 3000
+});
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     
+
+{% endblock %}

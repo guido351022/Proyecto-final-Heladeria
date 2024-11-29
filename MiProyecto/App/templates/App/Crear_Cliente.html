@@ -1,0 +1,27 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Crear Cliente
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+
+    <form action="" method="post"> {% csrf_token %}
+        <br> <br> <br>
+        <h1>Crear un nuevo Cliente</h1> <br> <br> <br>
+        <table>
+            {{ form.as_p }}
+        </table>
+        <br> <br>
+        <div class="container">
+            <button type="submit" class="btn btn-primary">Crear Cliente</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

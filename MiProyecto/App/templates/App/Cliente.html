@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Cliente
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container">
+    <h1> Cliente </h1> <br> <br> <br>
+{% for cliente in cliente %}
+    <div class="container">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <tr class="table-secondary text-center">
+                    <th> {{ cliente.id }}</th>
+                    <td> {{ cliente.nombre }}</td>
+                    <td> {{ cliente.apellido }}</td>
+                    <td> {{ cliente.email }}</td>
+            </tbody>
+        </table>
+        <div class="container">
+            <button type="button" class="btn btn-outline-primary">
+                <a href="{% url 'Crear Cliente' %}">Nuevo Cliente</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-light">
+                <a href="{% url 'Buscar Cliente' %}">Buscar Cliente</a>
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Actualizar Cliente' cliente_id=cliente.id %}">Actualizar Cliente</a>
+                </button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Eliminar Cliente' cliente_id=cliente.id %}">Eliminar Cliente</a>
+                </button> &nbsp;&nbsp;
+    </div>
+
+{% endfor %}
+</div>
+{% endblock %}

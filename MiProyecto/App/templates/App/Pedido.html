@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Pedido
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container">
+    <h1> Pedido </h1> <br> <br> <br>
+{% for pedido in pedido %}
+    <div class="container">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha</th>
+                <tr class="table-secondary text-center">
+                    <th>  {{ pedido.id }}</th>
+                    <td>  {{ pedido.cliente }}</td>
+                    <td>  {{ pedido.fecha }}</td>
+            </tbody>
+        </table>
+        <div class="container">
+            <button type="button" class="btn btn-outline-primary">
+                <a href="{% url 'Crear Pedido' %}">Nuevo Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-light">
+                <a href="{% url 'Buscar Pedido' %}">Buscar Pedido</a>
+            </button> &nbsp; &nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Actualizar Pedido' pedido_id=pedido.id %}">Actualizar Pedido</a>
+                </button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Eliminar Pedido' pedido_id=pedido.id %}">Eliminar Pedido</a>
+                </button> &nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Helado
+{% endblock %}
+
+{% block codigoDinamico %}
+<div class="container">
+    <h1> Helado </h1> <br> <br> <br>
+{% for helado in helado %}
+    <div class="container">
+        <table class="table table-hover text-center">
+            <tbody>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Sabor</th>
+                <tr class="table-secondary text-center">
+                    <th>  {{ helado.id }}</th>
+                    <td>  {{ helado.nombre }}</td>
+                    <td>  {{ helado.precio }}</td>
+                    <td>  {{ helado.sabor }}</td>
+            </tbody>
+        </table>
+        <div class="container">
+            <button type="button" class="btn btn-outline-primary">
+                <a href="{% url 'Crear Helado' %}">Nuevo Helado</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-light">
+                <a href="{% url 'Buscar Helado' %}">Buscar Helado</a>
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Actualizar Helado' helado_id=helado.id %}">Actualizar Helado</a>
+                </button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Eliminar Helado' helado_id=helado.id %}">Eliminar Helado</a>
+                </button> &nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
