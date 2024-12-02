@@ -1,4 +1,4 @@
-# Clínica Salud y Bienestar
+# heladeria_piculichi
 Este es un proyecto desarrollado en Django que permite gestionar funcionalidades relacionadas con la administración de la heladeria. A continuación, se presenta el orden recomendado para probar las funcionalidades principales y dónde encontrarlas.
 
 ⚙️ Instalación y Configuración
