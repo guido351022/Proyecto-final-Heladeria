@@ -136,14 +136,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtd.gmail.com'
-EMAIL_PORT =587
+EMAIL_BACKEND = 'django.db.core.mail.backends.smtp.EmailBackend'
+EMAL_HOST = 'smtp.hotmail.com'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER ='riosguidoezequiel@gmail.com'
+EMAIL_HOST_USER = 'riosguidoezequiel@gmail.com'
 EMAIL_HOST_PASSWORD = 'ezequiel10' # USA TU CONTRASEÑA 
-DEFAULT_FROM_EMAIL ='riosguidoezequiel@gmail.com'
-CONTACT_EMAIL = 'riosguidoezequiel@gmail.com ' # el mail donde recibiras los mensajes de contacto
+DEFAULT_FROM_EMAIL = 'riosguidoezequiel@gmail.com'
+CONTAC_EMAIL = 'riosguidoezequiel@gmail.com'
 
-EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend' #esto imprimira los correos en la consola
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Para imprimir correos en la consola (solo para pruebas)
+# EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
