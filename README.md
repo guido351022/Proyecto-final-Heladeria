@@ -1,68 +1,58 @@
--Título del Proyecto-
-Acá va un párrafo que describa lo que es el proyecto
+# Clínica Salud y Bienestar
+Este es un proyecto desarrollado en Django que permite gestionar funcionalidades relacionadas con la administración de una clínica. A continuación, se presenta el orden recomendado para probar las funcionalidades principales y dónde encontrarlas.
 
-Comenzando 🚀
-Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+⚙️ Instalación y Configuración
+1. Clonar el Repositorio
+Clona el repositorio y accede al directorio del proyecto:
 
-Mira Deployment para conocer como desplegar el proyecto.
+git clone <URL_DEL_REPOSITORIO>
+cd clinica-salud-bienestar
 
-Pre-requisitos 📋
-Que cosas necesitas para instalar el software y como instalarlas
+# Crear y Activar el Entorno Virtual
+Crea un entorno virtual y actívalo:
 
-Da un ejemplo
-Instalación 🔧
-Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose
+python -m venv clinicaenv
 
-Dí cómo será ese paso
+# En Windows:
+clinicaenv\Scripts\activate
 
-Da un ejemplo
-Y repite
+# En MacOS/Linux:
+source clinicaenv/bin/activate
 
-hasta finalizar
-Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo
+# Instalar Dependencias
+Instala las dependencias necesarias:
 
-Ejecutando las pruebas ⚙️
-Explica como ejecutar las pruebas automatizadas para este sistema
+pip install django
+pip install mysqlclient pymysql
 
-Analice las pruebas end-to-end 🔩
-Explica que verifican estas pruebas y por qué
+Alternativa si usas otro conector de MySQL:
+pip install mysql-connector-python
 
-Da un ejemplo
-Y las pruebas de estilo de codificación ⌨️
-Explica que verifican estas pruebas y por qué
+# Configurar la Base de Datos
+Asegúrate de que la configuración de la base de datos en settings.py sea correcta para tu entorno de desarrollo.
 
-Da un ejemplo
-Despliegue 📦
-Agrega notas adicionales sobre como hacer deploy
+# Realizar Migraciones
+Ejecuta las migraciones para preparar la base de datos:
 
-Construido con 🛠️
-Menciona las herramientas que utilizaste para crear tu proyecto
+python manage.py migrate
 
-Dropwizard - El framework web usado
-Maven - Manejador de dependencias
-ROME - Usado para generar RSS
-Contribuyendo 🖇️
-Por favor lee el CONTRIBUTING.md para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+# Crear un Superusuario
+Para acceder al panel de administración, crea un superusuario:
 
-Wiki 📖
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra Wiki
+python manage.py createsuperuser
 
-Versionado 📌
-Usamos SemVer para el versionado. Para todas las versiones disponibles, mira los tags en este repositorio.
+# Ejecutar el Servidor
+Finalmente, inicia el servidor local para probar la aplicación:
 
-Autores ✒️
-Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
+python manage.py runserver
 
-Andrés Villanueva - Trabajo Inicial - villanuevand
-Fulanito Detal - Documentación - fulanitodetal
-También puedes mirar la lista de todos los contribuyentes quíenes han participado en este proyecto.
+# 🚀 Funcionalidades Principales
+Gestión de Pacientes: CRUD de pacientes con información relevante.
+Gestión de Citas: Programación y modificación de citas médicas.
+Administración de Personal: Control de personal y especialistas médicos.
+Historial Médico: Visualización y edición del historial médico de cada paciente.
 
-Licencia 📄
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo LICENSE.md para detalles
+# 📌 Nota
+Este proyecto es una versión básica enfocada en la administración clínica. Para soporte adicional o para contribuir, por favor, abre un Issue o un Pull Request.
 
-Expresiones de Gratitud 🎁
-Comenta a otros sobre este proyecto 📢
-Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
-Da las gracias públicamente 🤓.
-Dona con cripto a esta dirección: 0xf253fc233333078436d111175e5a76a649890000
-etc.
+¡Gracias por usar Clínica Salud y Bienestar!
