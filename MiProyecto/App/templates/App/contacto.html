@@ -4,37 +4,20 @@
 
 {% block title %}
     Contacto
-{% endblock %}
-
-{% block content %}
-    <h1>Contacto</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea name="mensaje" required></textarea>
-
-        <button type="submit">Enviar</button>
-    </form>
-
-    <a href="{% url 'listar_mensajes' %}">Listar Mensajes</a>
-{% endblock %}
+{% endblock title %}
 
 {% block codigoDinamico %}
 <script>
     {% if messages %}
-        {% for message in messages %}
+        {% for message in message %}
             {% if message.tags == 'success' %}
-                toastr.success('{{ message }}');
+                toastr.success(' {{ message}}');
             {% elif message.tags == 'error' %}
-                toastr.error('{{ message }}');
+                toastr.error('{{message}}');
             {% endif %}
         {% endfor %}
     {% endif %}
 </script>
+
+{% url 'listar_mensajes' %}
 {% endblock %}

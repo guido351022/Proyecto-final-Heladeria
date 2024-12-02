@@ -80,9 +80,9 @@
                 </div>
             </div>            
         </div>
-        <a class="carousel-control-prev" href="ofertasCarousel" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#ofertasCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev.icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span> 
+            <span class="sr-only">Anterior</span> 
         </a>
         <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hiden="true"></span>
@@ -129,7 +129,7 @@
             <div class="card paso">
                 <div class="card-header" id="headingFour">
                     <div class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <button class="btn btn-link custom-button-text" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                             ¿Qué tipos de helados ofrecen?
                         </button>
                     </div>
@@ -144,7 +144,7 @@
             <div class="card paso"> 
                 <div class="card-header" id="headingFive">
                     <div class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <button class="btn btn-link custom-button-text" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                             ¿Puedo personalizar un pedido?
                         </button>
                     </div>
@@ -159,7 +159,7 @@
             <div class="card paso">
                 <div class="card-header" id="headingOne">
                     <div class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link custom-button-text" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             ¿Cuál es el helado más popular de su menú?
                         </button>
                     </div>
@@ -173,7 +173,7 @@
             <div class="card paso"> 
                 <div class="card-header" id="headingTwo">
                     <div class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-link custom-button-text" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             ¿Hacen pedidos a domicilio?
                         </button>
                     </div>
@@ -187,7 +187,7 @@
             <div class="card paso"> 
                 <div class="card-header" id="headingThree">
                     <div class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link custom-button-text" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             ¿Aceptan tarjetas de crédito o débito?
                         </button>
                     </div>
@@ -217,16 +217,16 @@
     </div>
 
     <!-- Mensajes -->
-    <div class="contacto mt-5">
+    <div class="contact mt-5">
         <div class="row mt-4">
             <div class="col-md-12">
-                <h3>Dejanos tu opinion</h3>
-    
-                <form action="{% url 'contacto'%}" method="post">
+                <h3>Contáctanos</h3>
+                
+                <form action="{% url 'contacto' %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="name" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -236,19 +236,20 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
     </div>
-<br> <br> <br>
+    <br><br><br>
+
 
     <!-- pie de pagina -->
     <footer class="mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5>Helaria Piculichi</h5>
+                    <h5>Heladeria Piculichi</h5>
                     <p>Contacto para reserva</p>
                     <p><span class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></span> Teléfono: (11) 1543-1552</p>
                     <p><span class="icon icon-ubicacion"><i class="fas fa-map-marker-alt"></i></span> Dirección: santa Rosa 1424</p>
@@ -258,8 +259,8 @@
                 <div class="col-md-4">
                     <h5>Enlaces Rápidos</h5>
                     <div class="footer-links">
-                        <a href="Politica Privacidad" class="footer-link">Política de privacidad</a>
-                        <a href="Terminos Condiciones" class="footer-link">Términos y condiciones</a>
+                        <a href="{% url 'Politica Privacidad' %}" class="footer-link">Política de privacidad</a>
+                        <a href="{% url 'Terminos Condiciones' %}" class="footer-link">Términos y condiciones</a>
                     </div>
                     <p>&copy; <span id="currentYear"></span> Heladeria Piculichi. Todos los derechos reservados.</p>
                 </div>
@@ -290,6 +291,5 @@ $('.carousel').carousel({
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-     
 
 {% endblock %}
