@@ -14,7 +14,7 @@
 
 .banner {
     text-align: center;
-    background-color: #4551f5;
+    background-color: #303030;
     padding: 20px;
 }    
 
@@ -108,3 +108,10 @@ footer ul li a:hover {
     text-decoration: underline;
 }
 
+.custom-button-text {
+    color: rgb(255, 217, 0);
+}
+
+.btn-link:hover {
+    color: rgb(173, 255, 21) !important;  /* Mantener el color azul al pasar el mouse */
+}
