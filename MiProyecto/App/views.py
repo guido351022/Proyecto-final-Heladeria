@@ -351,25 +351,25 @@ def contacto(request):
         nombre = request.POST.get('nombre')
         email = request.POST.get('email')
         mensaje = request.POST.get('mensaje')
-
+        
         if nombre and email and mensaje:
             MensajeContacto.objects.create(
-                nombre=nombre,
-                email=email,
-                mensaje=mensaje
+            nombre =nombre,
+            email =email,
+            mensaje =mensaje
             )
 
             send_mail(
                 'Gracias por contactarnos',
-                f' Hola {nombre}, hemos recibido tu mensaje y te contactaremos pronto',
+                f'Hola {nombre}, hemos recibido tu mensaje y te contactaremos pronto',
                 settings.DEFAULT_FROM_EMAIL,
-                [email]
+                [email],
             )
 
             messages.success(request, 'Mensaje enviado exitosamente.')
             return redirect('pagina_de_gracias')
         else:
-            messages.error(request, 'Por favor, llena todos los campos.')
+            messages.error(request, 'Por favor, llene todos los campos.')
 
     return render(request, 'App/contacto.html')
 
@@ -377,15 +377,18 @@ def pagina_de_gracias(request):
     return render(request, 'App/gracias.html')
 
 @admin.register(MensajeContacto)
-
 class MensajeContactoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'email','fecha_envio')
+    list_display = ('nombre', 'email', 'fecha_envio')
     search_fields = ('nombre', 'email')
+
 
 def listar_mensajes(request):
     mensajes = MensajeContacto.objects.all().order_by('-fecha_envio')
-    paginator = Paginator(mensajes, 10)
+    paginator = Paginator(mensajes, 10)  # Mostrar 10 mensajes por página
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'App/listar_mensajes.html', {'page_obj': page_obj})
+
+def about(request):
+    return render(request, 'App/about.html')
