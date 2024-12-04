@@ -24,6 +24,8 @@ Instala las dependencias necesarias:
 
 pip install django
 pip install mysqlclient pymysql
+pip install django-crispy-forms
+pip install crispy-bootstrap5
 
 Alternativa si usas otro conector de MySQL:
 pip install mysql-connector-python
