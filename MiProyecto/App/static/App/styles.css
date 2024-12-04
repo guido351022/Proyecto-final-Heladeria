@@ -115,3 +115,22 @@ footer ul li a:hover {
 .btn-link:hover {
     color: rgb(173, 255, 21) !important;  /* Mantener el color azul al pasar el mouse */
 }
+
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px; /* Establece un ancho fijo */
+    height: auto; /* Mantiene la proporción original */
+}
+
+
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px; /* Establece un ancho fijo */
+    height: auto; /* Mantiene la proporción original */
+}
