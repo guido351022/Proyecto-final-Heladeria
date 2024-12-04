@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://bootswatch.com/5/superhero/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="{% static 'App/styles.css' %}" rel="stylesheet"/>
     <link rel="icon" href="{% static 'favicon.jpg' %}">
     <title>
@@ -27,9 +28,7 @@
                 <a class="nav-link active" href="{% url 'Home' %}">Home
                   <span class="visually-hidden">(current)</span>
                 </a>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
-                </li>
+              
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'sobre_nosotros' %}">sobre nosotros</a>
                 </li>
@@ -47,15 +46,13 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'Pedido' %}">pedido</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
+              <a class="nav-link" href="{% url 'Logout' %}">Cerrar Sesion</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'Login' %}">Login</a>
+              <a class="nav-link" href="{% url 'Login' %}">Iniciar sesion</a>
             </li>
             {% endif %}
             </ul>
@@ -64,14 +61,7 @@
         </div>
       </nav>
 
-      <div class="container">
-      {% if request.user.is_authenticated %}
-      <h2>¡Hola, {{ user.username }}!</h2>
-            <a href="{% url 'Logout' %}">Cerrar sesion</a>
-        {% else %}
-            <h2>No has iniciado sesion. <a href="{% url 'Login' %}" >Inicia sesion aqui</a></h2>
-        {% endif %}
-      </div><br> <br> <br>  
+     
 
     {% block codigoDinamico %}
 

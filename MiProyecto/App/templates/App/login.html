@@ -10,9 +10,11 @@
 
 {% block codigoDinamico %}
 <br> <br> <br>
+
 <div class="container text center">
     <h2>Inicio de Sesion</h2>
 </div>
+<img src="{% static 'logo.jpg'%}" alt="Imagen" class="logo center-img">
 <div class="container form-container">
     <form method="post">{% csrf_token %}
         <div class="form-group">
