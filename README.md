@@ -19,6 +19,8 @@ venv\Scripts\activate
 # En MacOS/Linux:
 source venv/bin/activate
 
+# cd Pararse en la carpeta del proyecto
+
 # Instalar Dependencias
 Instala las dependencias necesarias:
 
