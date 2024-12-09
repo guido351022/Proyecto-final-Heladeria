@@ -134,3 +134,7 @@ footer ul li a:hover {
     width: 700px; /* Establece un ancho fijo */
     height: auto; /* Mantiene la proporción original */
 }
+
+body {
+    background-color: #0d5e20;
+}
